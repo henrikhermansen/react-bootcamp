@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.14.1/babel.js"></script>
+    <script type="text/babel">
+        const MyComponent = (
+            props // Try replacing props with object deconstruction
+        ) => (
+            <h1 style={{ color: 'red ' }}>Hello world!</h1> // Replace Hello with the prop greeting
+        );
+        const root = document.getElementById('root');
+        const element = <MyComponent greeting="Greetings" />;
+        ReactDOM.render(element, root);
+    </script>
+</html>

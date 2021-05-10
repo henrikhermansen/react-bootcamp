@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.14.1/babel.js"></script>
+    <script type="text/babel">
+        const MyComponent = ({ greeting }) => {
+            return <h1 style={{ color: 'red ' }}>{greeting} world!</h1>;
+        };
+        const root = document.getElementById('root');
+        const element = <MyComponent greeting="Greetings" />;
+        ReactDOM.render(element, root);
+    </script>
+</html>

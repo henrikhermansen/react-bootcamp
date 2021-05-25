@@ -8,6 +8,7 @@ interface ErrorState {
   hasError: boolean;
 }
 
+// But really, you could just install react-error-boundary from npm, and you won't need to bother with making class components ever again (I hope)
 class ErrorBoundary extends Component<ErrorProps, ErrorState> {
   constructor(props: ErrorProps) {
     super(props); // This is mandatory when having a constructor

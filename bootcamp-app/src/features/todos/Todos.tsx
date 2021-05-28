@@ -1,29 +1,45 @@
 import { Todo as TodoType } from '../../api/todos';
 import { useTheme } from '../theme/ThemeContext';
-import { getTodos, postTodo } from '../../api/todos';
+import { getTodos } from '../../api/todos';
+import { useEffect, useState } from 'react';
+import { AddTodo } from './AddTodo';
+import { UnorderedList } from '../../components/UnorderedList';
+import { Todo } from './Todo';
 
 const Error = () => <p style={{ color: 'red' }}>Error fetching todos</p>;
 
 export const Todos = () => {
   const theme = useTheme();
-  const todos: TodoType[] = [{ todo: 'Buy chocolate', done: false }];
-  const error = false;
-  const onAddTodo = () => {
-    console.log('Clicked Add');
+  const [todos, setTodos] = useState<TodoType[]>([]);
+  const [error, setError] = useState(false);
+
+  const fetchTodos = async () => {
+    try {
+      setTodos(await getTodos());
+    } catch {
+      setError(true);
+    }
   };
+
+  useEffect(() => {
+    fetchTodos();
+  }, []);
 
   return (
     <section>
       <h1 style={{ color: theme }}>React Bootcamp Todos</h1>
       <h2>Add todo</h2>
-      <form>
-        <input type="text" />{' '}
-        <button type="button" onClick={onAddTodo}>
-          Add
-        </button>
-      </form>
+      <AddTodo onAddTodo={fetchTodos} />
       <h2>Todos</h2>
-      {error ? <Error /> : <code>{JSON.stringify(todos, null, 2)}</code>}
+      {error ? (
+        <Error />
+      ) : (
+        <UnorderedList>
+          {todos.map((todo) => (
+            <Todo key={todo.id} todo={todo} onChangeTodo={fetchTodos} />
+          ))}
+        </UnorderedList>
+      )}
     </section>
   );
 };

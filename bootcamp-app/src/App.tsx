@@ -1,5 +1,5 @@
 import ErrorBoundary from './components/ErrorBoundary';
-import { ThemeProvider } from './features/theme/ThemeContext';
+import { ThemeProvider, useTheme } from './features/theme/ThemeContext';
 import { ThemeSelector } from './features/theme/ThemeSelector';
 import { Todos } from './features/todos/Todos';
 

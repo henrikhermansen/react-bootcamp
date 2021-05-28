@@ -1,11 +1,21 @@
+import { ThemeButton } from './ThemeButton';
+import { themes, useTheme } from './ThemeContext';
+
 const style = {
   display: 'flex',
 };
 
 export const ThemeSelector = () => {
+  const activeTheme = useTheme();
   return (
     <div style={style}>
-      <small>In a future version you can change the theme of this app</small>
+      {themes.map((theme) => (
+        <ThemeButton
+          key={theme}
+          isActive={theme === activeTheme}
+          theme={theme}
+        />
+      ))}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import { Button } from '../../components/Button';
-import { Theme } from './ThemeContext';
+import { Theme, useSetTheme } from './ThemeContext';
 
 const buttonStyle = {
   border: '2px solid #333',
@@ -20,6 +20,7 @@ export const ThemeButton = ({
   style,
   ...props
 }: ThemeButtonProps) => {
+  const setTheme = useSetTheme();
   return (
     <Button
       {...props}
@@ -29,6 +30,7 @@ export const ThemeButton = ({
         backgroundColor: theme,
         boxShadow: isActive ? 'black 0 0 5px' : 'none',
       }}
+      onClick={() => setTheme(theme)}
     />
   );
 };

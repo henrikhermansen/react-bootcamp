@@ -64,7 +64,7 @@ Our todo list now works great, but our app could use some color. You may have no
 
 :trophy: Create a theme state inside `ThemeProvider` and initiate the state with the first theme. You should also change `ThemeContext` to be initiated with `undefined`, like `SetThemeContext`.
 
-:trophy: Wrap `children` returned from `ThemeProvider` with Providers for the two Contexts created in the file. You should put the value and the se tter from the theme state in each Context.
+:trophy: Wrap `children` returned from `ThemeProvider` with Providers for the two Contexts created in the file. You should put the value and the setter from the theme state in each Context.
 
 :bulb: You need to use a `Context.Provider` component, and give it a `value` prop.
 

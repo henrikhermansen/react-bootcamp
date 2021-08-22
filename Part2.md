@@ -1,11 +1,9 @@
-# React Bootcamp - day 2
+# React workshop - part 2
 
-Welcome to the second day of React Bootcamp!
-
-Today we'll be beginning the work of making a todo app. Some code has been prepared for you, but the app currently doesn't work at all.\
+Now we'll begin the work of making a todo app. Some code has been prepared for you, but the app currently doesn't work at all.\
 The app has been set up using Create React App, so you don't need to worry about setting up the build process.
 
-For now you can ignore the [components](./bootcamp-app/src/components) and [theme](./bootcamp-app/src/features/theme) folders. Those are for day 3.
+For now you can ignore the [components](./bootcamp-app/src/components) and [theme](./bootcamp-app/src/features/theme) folders. Those are for part 3.
 
 If you ever get completely stuck, you can have a look in the suggested [solutions](./bootcamp-app/solutions) subfolder.
 
@@ -28,7 +26,7 @@ If you haven't already, take a look in `Todos.tsx`. Here you will see that the d
 
 :memo: Fetching data is not a React specific thing, so you've been provided with some API functions to let you focus on React. You'll see that `getTodos()` is already imported.
 
-:bulb: Use the appropriate Hook to give the component _state_. Use array deconstruction to get the value and the setter function.
+:bulb: Use the appropriate Hook to give the component _state_. Use array destructuring to get the value and the setter function.
 
 :bulb: Fetching data is an asynchronous process and gives side _effects_. Use the appropriate Hook to fetch data.
 
